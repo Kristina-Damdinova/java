@@ -19,7 +19,7 @@ public class Stepper {
 
     public void leftStep() {
         synchronized (lock) {
-            while(!isLeftTurn){
+            while (!isLeftTurn) {
                 try {
                     lock.wait();
                 } catch (Exception e) {
@@ -35,7 +35,7 @@ public class Stepper {
 
     public void rightStep()  {
         synchronized (lock) {
-            while(isLeftTurn){
+            while (isLeftTurn) {
                 try {
                     lock.wait();
                 } catch (Exception e) {
