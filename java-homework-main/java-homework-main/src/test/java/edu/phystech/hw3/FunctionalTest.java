@@ -21,10 +21,8 @@ public class FunctionalTest {
     public void mapHasRightSignatureTest() {
         List<Disk> diskList = List.of(new Disk(1), new Disk(2));
         Function<Shape, Double> getArea = Shape::getArea;
-
-//        нужно подправить сигнутру метода map, чтобы этот код компилировался и отрабатывал
-//        List<Double> expected = List.of(new Disk(1).getArea(), new Disk(2).getArea());
-//        Assertions.assertEquals(expected, Functional.map(diskList, getArea));
+        List<Double> expected = List.of(new Disk(1).getArea(), new Disk(2).getArea());
+        Assertions.assertEquals(expected, Functional.map(diskList, getArea));
     }
 
     @Test
