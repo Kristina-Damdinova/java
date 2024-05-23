@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 public class Functional {
 
-    public static <T, R> List<R> map(List<T> collection, Function<T, R> function) {
+    public static <T, R> List<R> map(List<T> collection, Function<? super T, R> function) {
         List<R> result = new LinkedList<>();
         for (T item : collection) {
             result.add(function.apply(item));
